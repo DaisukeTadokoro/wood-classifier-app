@@ -77,7 +77,8 @@ if uploaded_file:
                 response = openai.ChatCompletion.create(
                     model="gpt-4o",
                     messages=messages,
-                    api_key=st.secrets["OPENAI_API_KEY"]  # ✅ Streamlit secrets 経由でAPIキー指定
+                    api_key=st.secrets["OPENAI_API_KEY"]
+                )
                 result = response.choices[0].message.content
                 st.success("✅ 分類が完了しました")
                 st.markdown("### 判定結果")
