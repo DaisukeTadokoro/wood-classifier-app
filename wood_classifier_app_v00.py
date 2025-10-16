@@ -77,7 +77,6 @@ if uploaded_file:
                 response = openai.ChatCompletion.create(
                     model="gpt-4o",
                     messages=messages,
-                    api_key=st.secrets["OPENAI_API_KEY"]
                 )
                 result = response.choices[0].message.content
                 st.success("✅ 分類が完了しました")
