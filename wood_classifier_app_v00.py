@@ -23,6 +23,8 @@ if uploaded_file:
     if st.button("分類する"):
         with st.spinner("GPT-4oが分類中です..."):
             openai.api_key = st.secrets["OPENAI_API_KEY"]
+            
+            client = openai.OpenAI(api_key=openai.api_key)
 
             # --- Few-shot messages with correct image_url type ---
             messages = [
@@ -74,7 +76,7 @@ if uploaded_file:
 
             try:
                  # ChatCompletion呼び出し（v0系スタイル）
-                response = openai.ChatCompletion.create(
+                response = client.chat.completions.create(
                     model="gpt-4o",
                     messages=messages,
                 )
