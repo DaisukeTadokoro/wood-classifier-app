@@ -22,7 +22,7 @@ if uploaded_file:
 
     if st.button("分類する"):
         with st.spinner("GPT-4oが分類中です..."):
-            client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+            openai.api_key = st.secrets["OPENAI_API_KEY"]
 
             # --- Few-shot messages with correct image_url type ---
             messages = [
