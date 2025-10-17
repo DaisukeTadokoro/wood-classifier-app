@@ -16,7 +16,7 @@ st.markdown("""
 uploaded_file = st.file_uploader("顕微鏡画像をアップロードしてください", type=["jpg", "jpeg", "png"])
 
 if uploaded_file:
-    st.image(uploaded_file, caption="アップロード画像", use_column_width=True)
+    st.image(uploaded_file, caption="アップロード画像", use_container_width=True)
     img_bytes = uploaded_file.read()
     img_b64 = base64.b64encode(img_bytes).decode("utf-8")
 
